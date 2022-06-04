@@ -4,20 +4,14 @@ namespace Edsp\Mvc\Controllers\Menu;
 
 use DirectoryIterator;
 use Edsp\Mvc\Controllers\Controller;
-use Edsp\Mvc\Views\AbstractView;
 use Edsp\Mvc\Views\Interfaces\IParentView;
+use Edsp\Mvc\Views\Interfaces\IView;
 use Edsp\Mvc\Views\ViewFactory;
-use Exception;
 use ReflectionClass;
 
 class MenuController extends Controller
 {
-    public function __construct()
-    {
-        //Necessário para evitar loop infinito de instanciações
-    }
-
-    public function view(): AbstractView
+    public function view(): IView
     {
         /*** @var IParentView $menu */
         $menu = ViewFactory::createFromViewFileName('Menu');
@@ -42,10 +36,5 @@ class MenuController extends Controller
         }
 
         return $menu->setChild('items', ViewFactory::createFromHtml($items));
-    }
-
-    protected function pageContent(): AbstractView
-    {
-        throw new Exception("Método não implementado!");
     }
 }

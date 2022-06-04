@@ -3,7 +3,7 @@
 namespace Edsp\Mvc\Annotations;
 
 use Attribute;
-use Edsp\Mvc\Controllers\Controller;
+use Edsp\Mvc\Controllers\PageController;
 use Edsp\Mvc\Views\Interfaces\IParentView;
 use Edsp\Mvc\Views\ViewFactory;
 
@@ -11,14 +11,14 @@ use Edsp\Mvc\Views\ViewFactory;
 class ControllerMenuItemAnnotation
 {
     private string $label;
-    private Controller $controller;
+    private PageController $controller;
 
     public function __construct(string $label)
     {
         $this->label = $label;
     }
 
-    public static function fromController(Controller $controller): ?self
+    public static function fromController(PageController $controller): ?self
     {
         if (!($annotation = $controller->getReflection()->getAttributes(self::class)))
             return null;

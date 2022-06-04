@@ -2,7 +2,7 @@
 
 namespace Edsp\Mvc\Http;
 
-use Edsp\Mvc\Controllers\Controller;
+use Edsp\Mvc\Controllers\PageController;
 use Edsp\Mvc\ExpandedObject;
 use Edsp\Mvc\Throwables\InvalidRouteException;
 use Exception;
@@ -14,7 +14,7 @@ class Router extends ExpandedObject
 
     private string $uri;
     private array $explodedUriCache;
-    private Controller $controller;
+    private PageController $controller;
     private string $action;
     private array $arguments;
 
@@ -56,9 +56,9 @@ class Router extends ExpandedObject
         if (!class_exists($controllerClass))
             throw new InvalidRouteException("O controlador '$controllerName' não foi encontrado!");
 
-        if (!is_subclass_of($controllerClass, Controller::class))
+        if (!is_subclass_of($controllerClass, PageController::class))
             throw new InvalidRouteException(
-                "O controlador '$controllerName' precisa herdar a classe '" . Controller::class . "'!"
+                "O controlador '$controllerName' precisa herdar a classe '" . PageController::class . "'!"
             );
 
         $this->controller = new $controllerClass;

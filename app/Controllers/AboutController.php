@@ -4,14 +4,14 @@ namespace Edsp\Mvc\Controllers;
 
 use Edsp\Mvc\Annotations\ControllerMenuItemAnnotation;
 use Edsp\Mvc\Controllers\Menu\IMenuItemController;
-use Edsp\Mvc\Views\AbstractView;
 use Edsp\Mvc\Views\Interfaces\IParentView;
+use Edsp\Mvc\Views\Interfaces\IView;
 use Edsp\Mvc\Views\ViewFactory;
 
 #[ControllerMenuItemAnnotation('Sobre')]
-class AboutController extends Controller implements IMenuItemController
+class AboutController extends PageController implements IMenuItemController
 {
-    protected function pageContent(): AbstractView
+    protected function pageContent(): IView
     {
         return ViewFactory::createFromHtml('<div class="container">Sobre</div>');
     }

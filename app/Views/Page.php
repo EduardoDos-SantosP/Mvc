@@ -2,7 +2,9 @@
 
 namespace Edsp\Mvc\Views;
 
-class Page extends AbstractView
+use Edsp\Mvc\Views\Interfaces\IPage;
+
+class Page extends AbstractView implements IPage
 {
     protected string $lang = 'pt-br';
     protected string $title;
