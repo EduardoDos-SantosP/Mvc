@@ -1,0 +1,22 @@
+{
+  "name": "edsp/mvc",
+  "description": "",
+  "minimum-stability": "stable",
+  "license": "",
+  "authors": [
+    {
+      "name": "EduardoDos-SantosP",
+      "email": "66569234+EduardoDos-SantosP@users.noreply.github.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Edsp\\Mvc\\": ["app/", "src/"]
+    }
+  },
+  "require": {
+    "illuminate/collections": "^9.12",
+    "symfony/string": "^6.0",
+    "ext-pdo": "*"
+  }
+}
