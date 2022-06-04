@@ -45,7 +45,7 @@ abstract class PageController extends Controller
         return $this->page;
     }
 
-    protected function getMenuItem(): ?IParentView
+    protected function getMenuItem(): ?IView
     {
         if (!($annotation = ControllerMenuItemAnnotation::fromController($this)))
             throw new Exception(

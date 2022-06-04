@@ -4,6 +4,7 @@ namespace Edsp\Mvc\Controllers\Menu;
 
 use Edsp\Mvc\Controllers\PageController;
 use Edsp\Mvc\Views\Interfaces\IParentView;
+use Edsp\Mvc\Views\Interfaces\IView;
 use Edsp\Mvc\Views\View;
 use Edsp\Mvc\Views\ViewContext;
 
@@ -16,7 +17,7 @@ abstract class AbstractMenuItemController implements IMenuItemController
         $this->menuItem = new View(ViewContext::viewFileName('MenuItem'));
     }
 
-    public function getMenuItem(PageController $controller = null): IParentView
+    public function getMenuItem(PageController $controller = null): IView
     {
         return $this->menuItem;
     }

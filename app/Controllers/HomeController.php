@@ -16,7 +16,7 @@ class HomeController extends PageController implements IMenuItemController
         return ViewFactory::CreateFromViewFileName('Home');
     }
 
-    public function getMenuItem(): IParentView
+    public function getMenuItem(): IView
     {
         return parent::getMenuItem();
     }

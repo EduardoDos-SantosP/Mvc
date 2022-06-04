@@ -18,7 +18,6 @@ class Router extends ExpandedObject
     private string $action;
     private array $arguments;
 
-
     public function __construct(?string $uri = null)
     {
         try {
